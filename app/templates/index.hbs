@@ -1,0 +1,10 @@
+<ul>
+  {{#each model as |blog|}}
+     <li>{{blog.name}}'s </li>
+     <ul>
+       {{#each blog.posts as |post|}}
+       <li>{{post}}</li>
+       {{/each}}
+     </ul>
+  {{/each}}
+</ul>
