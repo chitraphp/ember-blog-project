@@ -1,10 +1,8 @@
 <ul>
-  {{#each model as |blog|}}
-     <li>{{blog.name}}'s </li>
-     <ul>
-       {{#each blog.posts as |post|}}
-       <li>{{post}}</li>
-       {{/each}}
-     </ul>
+  {{#each model.authors as |author|}}
+     <!-- <li>{{author-tile author=author}}</li> -->
+     <li>author</li>
   {{/each}}
 </ul>
+
+{{new-author save2="save3"}}

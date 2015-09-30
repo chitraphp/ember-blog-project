@@ -31,7 +31,13 @@ export default Ember.Route.extend({
       authors: this.store.findAll('author'),
       posts: this.store.findAll('post')
     });
-
+  },
+  actions: {
+    save3(params) {
+      var newAuthor = this.store.createRecord('author', params);
+      newAuthor.save();
+      this.transitionTo('index');
+    },
   }
 
 });
