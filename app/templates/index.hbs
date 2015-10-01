@@ -1,9 +1,7 @@
 <h3>All authors</h3>
 <ul>
   {{#each model.authors as |author|}}
-     <!-- <li>{{author-tile author=author}}</li> -->
-     <!-- <li>{{author.name}}</li> -->
-     <li>{{#link-to 'author' author.id}} {{author.name}} {{/link-to}}</li>
+     <li>{{#link-to 'author' author.id}} {{author.name}} {{/link-to}}<button {{action 'deleteAuthor' author}}>Delete</button></li>
   {{/each}}
 </ul>
 

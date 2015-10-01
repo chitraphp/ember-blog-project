@@ -47,6 +47,18 @@ export default Ember.Route.extend({
     //   });
     //   this.transitionTo('author', params.author)
     // }
+    deleteAuthor(author) {
+      var post_deletions = author.get('posts').map(function(post) {
+        return post.destroyRecord();
+      });
+      Ember.RSVP.all(post_deletions)
+        .then(function() {
+          return author.destroyRecord();
+        })
+
+      this.transitionTo('index');
+    }
+
   }
 
 });
