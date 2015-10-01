@@ -1,0 +1,15 @@
+<h3> Author:{{model.author.name}}</h3>
+
+<h3>Blog:{{model.blog}}</h3>
+
+{{#if model.comments}}
+<ul>
+{{#each model.comments as |comment|}}
+   <li>{{comment.name}}:{{comment.comment}}</li>
+
+{{/each}}
+</ul>
+{{else}}
+<h3>No Comments</h3>
+{{/if}}
+{{new-comment saveComment="saveComment" post=model}}

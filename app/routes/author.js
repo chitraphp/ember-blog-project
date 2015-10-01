@@ -13,6 +13,17 @@ export default Ember.Route.extend({
       return author.save();
     });
     this.transitionTo('author', params.author);
+  },
+  deletePost(post) {
+    var post_deletions = post.get('comments').map(function(comment) {
+      return comment.destroyRecord();
+    });
+    Ember.RSVP.all(post_deletions)
+      .then(function() {
+        return post.destroyRecord();
+      })
+
+    this.transitionTo('index');
   }
 }
 });
