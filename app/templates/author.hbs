@@ -1,8 +1,27 @@
+<!-- <h3> Author:{{model.name}}</h3> -->
+
+{{#if model.posts}}
+<ul>
+{{#each model.posts as |post|}}
+<li>{{post.blog}}</li>
+{{/each}}
+</ul>
+{{else}}
+<h3>No posts</h3>
+{{/if}}
 <h3> Author:{{model.name}}</h3>
 {{#if model.posts}}
 <h3>posts</h3>
 {{else}}
 <h3>Empty</h3>
 {{/if}}
+<!--
+<ul>
+  {{#each posts as |post|}}
+    <li>{{post.title}} - {{post.blog}}</li>
+  {{/each}}
+</ul> -->
+
+
 
 {{new-post savePost="savePost" author=model}}

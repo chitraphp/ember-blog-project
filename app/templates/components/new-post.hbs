@@ -1,13 +1,14 @@
+
 {{#if addNewPost}}
   <h1>New Post</h1>
   <div>
     <form>
       <div class="form-group">
-        <label for="title"></label>
+        <label for="title">Title:</label>
         {{input value=title id="title"}}
       </div>
       <div class="form-group">
-        <label for="blog"></label>
+        <label for="blog">Blog</label>
         {{input value=blog id="blog"}}
       </div>
       <button {{action 'savePost'}}>Save</button>
