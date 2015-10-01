@@ -1,7 +1,8 @@
 <ul>
   {{#each model.authors as |author|}}
      <!-- <li>{{author-tile author=author}}</li> -->
-     <li>author</li>
+     <!-- <li>{{author.name}}</li> -->
+     <li>{{#link-to 'author' author.id}} {{author.name}} {{/link-to}}</li>
   {{/each}}
 </ul>
 

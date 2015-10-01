@@ -9,19 +9,19 @@ import Ember from 'ember';
 // }
 // ];
 //alert(authors[0].id);
-var blogs = [
-  {
-    id:1,
-    name:"chitra",
-
-    posts:["ekkkkkkkkk","ssssssssssssss","mmmmmmm"]
-
-  }, {
-    id:2,
-    name:"suchi",
-    posts:["vvvvvv","ddsazxcvfd"]
-  }
-];
+// var blogs = [
+//   {
+//     id:1,
+//     name:"chitra",
+//
+//     posts:["ekkkkkkkkk","ssssssssssssss","mmmmmmm"]
+//
+//   }, {
+//     id:2,
+//     name:"suchi",
+//     posts:["vvvvvv","ddsazxcvfd"]
+//   }
+// ];
 
 
 export default Ember.Route.extend({
@@ -38,6 +38,15 @@ export default Ember.Route.extend({
       newAuthor.save();
       this.transitionTo('index');
     },
+    // savePost(params) {
+    //   var newPost = this.store.createRecord('post', params);
+    //   var author = params.author;
+    //   author.get('posts').addObject(newPost);
+    //   newPost.save().then(function() {
+    //     return author.save();
+    //   });
+    //   this.transitionTo('author', params.author)
+    // }
   }
 
 });
