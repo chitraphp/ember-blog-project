@@ -3,8 +3,9 @@
 {{#if model.posts}}
 <ul>
 {{#each model.posts as |post|}}
-  <!-- <li>{{post.title}}</li> -->
+  <li>{{post.title}}</li>
   <li>{{#link-to 'post' post.id}} {{post.title}}{{/link-to}}<button {{action 'deletePost' post}}>Delete</button> <button {{action 'updatePost' post}}>Update</button></li>
+
 {{/each}}
 </ul>
 {{else}}
